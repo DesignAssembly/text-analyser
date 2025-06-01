@@ -1,0 +1,24 @@
+{
+  "name": "text-analyser",
+  "version": "1.0.0",
+  "description": "Analyze text word, character count",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DesignAssembly/text-analyser.git"
+  },
+  "author": "Gavin Wood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DesignAssembly/text-analyser/issues"
+  },
+  "homepage": "https://github.com/DesignAssembly/text-analyser#readme",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
