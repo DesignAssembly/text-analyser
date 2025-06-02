@@ -3,61 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <title>Text Analyser</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/text-analyser/assets/index-Hg2UT99D.js"></script>
-  <link rel="stylesheet" crossorigin href="/text-analyser/assets/index-CH_Sdg-B.css">
+  <script type="module" crossorigin src="/text-analyser/assets/index-CSd8EFQk.js"></script>
+  <link rel="stylesheet" crossorigin href="/text-analyser/assets/index-D1b7rKD8.css">
 </head>
 <body class="dark">
     <div class="wrapper">
         <header>
-            <img class="logo" src="./assets/logo-dark-theme.svg" alt="">
-            <a class="theme-switch"><img class="theme-icon" src="./assets/icon-sun.svg" alt=""></a>
+            <img class="logo" src="./assets/logo-dark-theme.svg" alt="Text Analyser">
+            <button class="theme-switch" aria-label="Toggle theme">
+                <img class="theme-icon" src="./assets/icon-sun.svg" alt="switch theme">
+            </button>
         </header>
         <main>
             <section class="container flex place-center">
                 <h1 class="headline">Analyze your text in real-time.</h1>
             </section>
             <section class="container">
-                <textarea name="" id="textInput" rows="10" placeholder="Start typing here… (or paste your text)"></textarea>
+                <textarea aria-describedby="limitMessage" id="textInput" rows="10" placeholder="Start typing here… (or paste your text)"></textarea>
                 <p id="limitMessage" class="limit-warning" style="display: none;">
-                    <i><img src="./assets/icon-info.svg" alt="warning limit reached"></i>
+                    <i><img src="./assets/icon-info.svg" alt="" aria-hidden="true"></i>
                     <span class="limit-label"></span>
                 </p>
                 <div class="selections-container space-between">
                     <div class="selections flex-m">
-                        <div class="">
+                        <fieldset>
+                            <legend id="exclude-whitespaces-label" class="sr-only">Exclude Whitespaces Settings</legend>
                             <label class="form-control" for="exclude">
                                 <input id="exclude" type="checkbox">Exclude Spaces
                             </label>
-                        </div>
+                        </fieldset>
 
-                        <div class="flex limits-container">
+                        <fieldset class="flex limits-container">
+                            <legend id="limit-toggle-label" class="sr-only">Character Limit Settings</legend>
                             <label class="form-control" for="setLimit">
                                 <input id="setLimit" type="checkbox">Set Character Limit
                             </label>
+                            <label for="charLimitInput" class="sr-only">Character Limit Input</label>
                             <input id="charLimitInput" type="number" placeholder="Enter limit" style="display: none;" />
-                        </div>
+                        </fieldset>
                     </div>
-                    <span> Approx. reading time: <span id="readingTime">0 minutes</span></span>
+                    <span> Approx. reading time: <span id="readingTime" aria-live="polite">0 minutes</span></span>
                 </div>
             </section>
             <section class="counters">
                 <div class="counter-container">
-                    <span id="charCount" class="counter">00</span>
+                    <span id="charCount" class="counter" aria-live="polite">00</span>
                     <span class="counter-title">Total Characters</span>
                 </div>
                 <div class="counter-container">
-                    <span id="wordCount" class="counter">00</span>
+                    <span id="wordCount" class="counter" aria-live="polite">00</span>
                     <span class="counter-title">Word Count</span>
                 </div>
                 <div class="counter-container">
-                    <span id="sentCount" class="counter">00</span>
+                    <span id="sentCount" class="counter" aria-live="polite">00</span>
                     <span class="counter-title">Sentence Count</span>
                 </div>
             </section>
             <section class="letter-density">
-                <h3>Letter Density</h3>
+                <h2>Letter Density</h2>
                 <p id="letterMessage" class="letter-density-message">No characters found. Start typing to see letter density.</p>
                 <div id="letterDensity" class="letter-density-container"></div>
                 <button id="viewMoreBtn" class="btn-link" style="display: none;">
