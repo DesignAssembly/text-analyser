@@ -6,14 +6,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <title>Text Analyser</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/text-analyser/assets/index-CSd8EFQk.js"></script>
-  <link rel="stylesheet" crossorigin href="/text-analyser/assets/index-D1b7rKD8.css">
+  <script type="module" crossorigin src="/text-analyser/assets/index-9c6yJrWv.js"></script>
+  <link rel="stylesheet" crossorigin href="/text-analyser/assets/index-WFBTO7qR.css">
 </head>
 <body class="dark">
     <div class="wrapper">
         <header>
             <img class="logo" src="./assets/logo-dark-theme.svg" alt="Text Analyser">
-            <button class="theme-switch" aria-label="Toggle theme">
+            <button type="button" class="theme-switch" aria-label="Toggle theme">
                 <img class="theme-icon" src="./assets/icon-sun.svg" alt="switch theme">
             </button>
         </header>
@@ -22,7 +22,8 @@
                 <h1 class="headline">Analyze your text in real-time.</h1>
             </section>
             <section class="container">
-                <textarea aria-describedby="limitMessage" id="textInput" rows="10" placeholder="Start typing here… (or paste your text)"></textarea>
+                <label class="form-control sr-only" for="textInput"></label>
+                <textarea aria-describedby="limitMessage" id="textInput" rows="8" placeholder="Start typing here… (or paste your text)"></textarea>
                 <p id="limitMessage" class="limit-warning" style="display: none;">
                     <i><img src="./assets/icon-info.svg" alt="" aria-hidden="true"></i>
                     <span class="limit-label"></span>
